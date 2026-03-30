@@ -182,6 +182,13 @@
       padding: 18px;
       background: rgba(8, 21, 17, 0.84);
     }
+    /* New Style for Primary Data Callouts */
+    .card.primary-doctoral {
+      border: 1px dashed #5dbbe5;
+      background: rgba(93, 187, 229, 0.05);
+    }
+    .card.primary-doctoral h3 { color: #5dbbe5; }
+
     .card h3 {
       margin: 0 0 10px;
       font-size: 1.08rem;
@@ -228,6 +235,12 @@
       transform-box: fill-box;
       transform-origin: center;
     }
+    /* SVG Marker for Primary Data */
+    .node.is-primary rect {
+        stroke: #5dbbe5;
+        stroke-dasharray: 4;
+    }
+
     .edge {
       stroke: rgba(160, 220, 195, 0.5);
       stroke-width: 1.8;
@@ -385,7 +398,6 @@
       height: 100%;
       width: 0;
       border-radius: inherit;
-      background: linear-gradient(90deg, #5bddaa, #8fedcd);
       transition: 300ms ease;
     }
     .timeline-wrap {
@@ -425,6 +437,10 @@
     .gantt tbody td {
       background: rgba(255,255,255,0.03);
       color: #86ab9d;
+    }
+    /* WP5 Primary Data Highlight */
+    .gantt tr.is-primary td {
+        border: 1px solid #5dbbe5;
     }
     .gantt .on {
       color: #091912;
@@ -582,7 +598,7 @@
     <section class="section panel" id="overview">
       <h2>What this system actually does</h2>
       <p class="section-lead">
-        The SDSS is designed as a decision model rather than a full process-response simulator. Its job is to show where NbS portfolios should be prioritised first, which portfolios are favoured, how recommendations behave when assumptions shift, and what minimum verification still needs to happen before action. The result is an interpretable claim, not just a colourful map.
+        The SSDS (Stability-aware Spatial Decision Support) is designed as a decision model rather than a full process-response simulator. Its job is to show where NbS portfolios should be prioritised first, which portfolios are favoured, how recommendations behave when assumptions shift, and what minimum verification still needs to happen before action. The result is an interpretable claim, not just a colourful map.
       </p>
       <div class="grid-3">
         <article class="card">
@@ -603,6 +619,25 @@
       </div>
     </section>
 
+    <section class="section panel" id="doctoral-data">
+        <h2>Primary Doctoral Data Generation</h2>
+        <p class="section-lead">The thesis generates new georeferenced empirical evidence to challenge map-based assumptions, calibrate rules, and diagnose misclassification[cite: 158, 211, 212].</p>
+        <div class="grid-3">
+            <article class="card primary-doctoral">
+                <h3>1. Reach-Audit Campaign</h3>
+                <p>Georeferenced field observations of bank condition, livestock access, riparian continuity, and visible connectivity used to ground-truth SDSS rules[cite: 215, 239].</p>
+            </article>
+            <article class="card primary-doctoral">
+                <h3>2. Misclassification Diagnosis</h3>
+                <p>Primary field validation used specifically to identify where map-based evidence fails to represent local biophysical or maintainability realities[cite: 218, 349].</p>
+            </article>
+            <article class="card primary-doctoral">
+                <h3>3. Uncertainty Estimates</h3>
+                <p>New data from repeat-audit campaigns to quantify observer, seasonal, and boundary uncertainty within the perturbation protocol[cite: 219, 350].</p>
+            </article>
+        </div>
+    </section>
+
     <section class="section panel" id="uml">
       <h2>UML-style dependency map</h2>
       <p class="section-lead">
@@ -616,6 +651,7 @@
             <span class="legend-chip" data-tip-title="Decision core" data-tip="The explicit rule layer and ranking engine that transform evidence into recommendations.">Decision core</span>
             <span class="legend-chip" data-tip-title="Uncertainty layer" data-tip="The ensemble logic that perturbs evidence, parameters, structure, and scale to test stability.">Uncertainty layer</span>
             <span class="legend-chip" data-tip-title="Implementation interface" data-tip="Sequencing, verification design, and reproducibility packaging that make outputs usable beyond research text.">Implementation interface</span>
+            <span class="legend-chip" style="border-color:#5dbbe5; color:#5dbbe5" data-tip-title="Primary Data" data-tip="New empirical data generated specifically for the doctoral project.">Primary Doctoral Data</span>
           </div>
         </div>
         <aside class="detail-panel panel" id="detail-panel">
@@ -691,8 +727,8 @@ output:
           <div class="card">
             <h3>Why lexicographic ordering matters</h3>
             <ul class="list-clean">
-              <li><strong>Nutrient reduction stays primary.</strong> This keeps water-quality delivery at the centre of the model.</li>
-              <li><strong>Biodiversity is operationalised as connectivity.</strong> Corridor continuity and ecological safeguards refine placement.</li>
+              <li><strong>Nutrient reduction stays primary.</strong> This keeps water-quality delivery at the centre of the model. [cite: 139]</li>
+              <li><strong>Biodiversity is operationalised as connectivity.</strong> Corridor continuity and ecological safeguards refine placement. [cite: 140]</li>
               <li><strong>Flood and sediment remain structured secondary objectives.</strong> They improve portfolio coherence without flattening priorities into one composite score.</li>
             </ul>
           </div>
@@ -723,7 +759,7 @@ output:
           </article>
           <article class="card" data-tip-title="Portfolio principle" data-tip="The site does not output one universal best measure. It outputs coherent families and their interactions.">
             <h3>Portfolio principle</h3>
-            <p>Interacting measures are treated as systems. One intervention often depends on whether another is also present.</p>
+            <p>Interacting measures are treated as systems. One intervention often depends on whether another is also present. [cite: 256]</p>
           </article>
         </div>
       </div>
@@ -752,7 +788,7 @@ else:
               <li><strong>Recurrent stock pressure.</strong> Is the corridor likely to be damaged again?</li>
               <li><strong>Access and inspection visibility.</strong> Can the intervention be checked and maintained in practice?</li>
               <li><strong>Repair burden and conflict risk.</strong> Drain-cleaning conflict, mowing conflict, bank-instability burden.</li>
-              <li><strong>Persistence without repeated intervention.</strong> Durable fit matters more than apparent fit.</li>
+              <li><strong>Persistence without repeated intervention.</strong> Durable fit matters more than apparent fit. [cite: 221]</li>
             </ul>
           </div>
         </div>
@@ -896,16 +932,16 @@ else:
             <li>Methods paper on stability-aware SDSS design.</li>
             <li>Demonstrator paper for Nanny-Delvin.</li>
             <li>Thesis contribution on portfolios and scaling.</li>
-            <li>Data paper or methods appendix on reach-audit validation.</li>
+            <li>Data paper or methods appendix on reach-audit validation. [cite: 413]</li>
           </ul>
         </article>
         <article class="card">
           <h3>Practical outputs</h3>
           <ul>
-            <li>Priority atlas and stability maps.</li>
-            <li>Portfolio-specific verification templates.</li>
-            <li>Rule sheet, assumptions register, and decision log.</li>
-            <li>Rebuild instructions for transfer to other catchments.</li>
+            <li>Priority atlas and stability maps. [cite: 416]</li>
+            <li>Portfolio-specific verification templates. [cite: 417]</li>
+            <li>Rule sheet, assumptions register, and decision log. [cite: 418]</li>
+            <li>Rebuild instructions for transfer to other catchments. [cite: 420]</li>
           </ul>
         </article>
         <article class="card">
@@ -914,7 +950,7 @@ else:
             <li>Versioned rule sheet to manage contestation.</li>
             <li>Conservative classification where data quality is weak.</li>
             <li>Explicit scope boundary against process-response sprawl.</li>
-            <li>Bounded field component tied to validation, not monitoring expansion.</li>
+            <li>Bounded field component tied to validation, not monitoring expansion. [cite: 407]</li>
           </ul>
         </article>
       </div>
@@ -1005,6 +1041,7 @@ else:
       },
       {
         id: 'field', x: 660, y: 186, w: 230, h: 86, label: 'Bounded reach audit', sub: 'Validation • misclassification • maintainability',
+        isPrimary: true,
         detail: {
           title: 'Bounded reach audit',
           desc: 'Primary data are bounded and protocol-driven. They exist to test the decision architecture, not to turn the thesis into a broad monitoring campaign.' ,
@@ -1109,7 +1146,7 @@ else:
 
       nodes.forEach(node => {
         const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        g.setAttribute('class', 'node');
+        g.setAttribute('class', 'node' + (node.isPrimary ? ' is-primary' : ''));
         g.dataset.node = node.id;
 
         const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -1230,8 +1267,15 @@ else:
       const meanPhase = meanPhaseScore / runs;
 
       let stabilityClass = 'Fragile';
-      if (persistPct >= 80) stabilityClass = 'Robust';
-      else if (persistPct >= 40) stabilityClass = 'Conditional';
+      let stabilityColor = '#ff5f5f'; // Pleasant Red
+      if (persistPct >= 80) {
+          stabilityClass = 'Robust';
+          stabilityColor = '#00ff88'; // Brighter Green
+      }
+      else if (persistPct >= 40) {
+          stabilityClass = 'Conditional';
+          stabilityColor = '#ff9f00'; // Orange
+      }
 
       let phaseText = 'Deferred';
       if (persistPct >= 80 && meanPhase >= 0.63) phaseText = 'Early action';
@@ -1245,10 +1289,18 @@ else:
           : 'The candidate drops out too often under plausible perturbations. It may still be interesting, but not as an early-action claim.';
 
       document.getElementById('persistValue').textContent = `${persistPct}%`;
+      document.getElementById('persistValue').style.color = stabilityColor;
+
       document.getElementById('phaseValue').textContent = phaseText;
+      
       document.getElementById('stabilityValue').textContent = stabilityClass;
+      document.getElementById('stabilityValue').style.color = stabilityColor;
+
       document.getElementById('simNarrative').textContent = narrative + ` Phase-readiness in this sandbox is ${phasePct}%.`;
-      document.getElementById('statusBar').style.width = `${persistPct}%`;
+      
+      const span = document.getElementById('statusBar').querySelector('span');
+      span.style.width = `${persistPct}%`;
+      span.style.background = stabilityColor;
     }
 
     runSimulation();
@@ -1258,7 +1310,7 @@ else:
       { label: 'WP2 Core GIS build under lexicographic objectives', start: 6, end: 18, cls: 'mid' },
       { label: 'WP3 Portfolio logic & catchment scaling', start: 10, end: 24, cls: 'on' },
       { label: 'WP4 Uncertainty & ranking-stability experiments', start: 12, end: 30, cls: 'mid' },
-      { label: 'WP5 Primary-data validation & verification design', start: 18, end: 32, cls: 'on' },
+      { label: 'WP5 Primary-data validation & verification design', start: 18, end: 32, cls: 'on', isPrimary: true },
       { label: 'WP6 Reproducibility, publications & thesis integration', start: 30, end: 48, cls: 'mid' }
     ];
 
@@ -1290,8 +1342,9 @@ else:
       const tbody = document.createElement('tbody');
       ganttData.forEach(row => {
         const tr = document.createElement('tr');
+        if (row.isPrimary) tr.classList.add('is-primary');
         const label = document.createElement('td');
-        label.textContent = row.label;
+        label.innerHTML = row.label + (row.isPrimary ? ' <span style="color:#5dbbe5; font-size:10px; display:block">PRIMARY DATA GEN</span>' : '');
         tr.appendChild(label);
         for (let m = 1; m <= 48; m++) {
           const td = document.createElement('td');
