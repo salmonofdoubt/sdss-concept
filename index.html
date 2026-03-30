@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRDA SDSS | Stability-Aware NbS Prioritisation</title>
+  <title>TRDA SSDS | Stability-Aware NbS Prioritisation</title>
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -519,12 +519,12 @@
   <div class="tooltip-panel" id="tooltip"></div>
   <div class="page">
     <section class="hero">
-      <div class="eyebrow">TRDA SSDS doctoral concept • Author: André Baumann • Developed for GitHub Pages • Interactive systems map</div>
+      <div class="eyebrow">TRDA SSDS doctoral concept • André Baumann • GitHub Pages • Interactive systems map</div>
       <h1>Stability-Aware Spatial Decision Support for Prioritising NbS Portfolios</h1>
       <p class="subhead">
-        A single-page technical website for your long proposal: the system architecture, UML-style dependencies,
+        A single-page technical website based on long-form proposal: the system architecture, UML-style dependencies,
         ranking logic, perturbation experiments, verification interface, portfolio families, and phased delivery plan.
-        The design is static-site friendly, hoverable, and ready for GitHub Pages.
+        The design is static-site friendly, hoverable, and runs on GitHub Pages.
       </p>
       <div class="badge-row">
         <span class="badge" data-tip-title="Core novelty" data-tip="The contribution is not just a suitability map. It is a transferable decision method that distinguishes eligibility, suitability, priority, and decision robustness under uncertainty.">Novelty: stability-aware prioritisation</span>
@@ -593,7 +593,7 @@
     <section class="section panel" id="overview">
       <h2>What this system actually does</h2>
       <p class="section-lead">
-        The SDSS is designed as a decision model rather than a full process-response simulator. Its job is to show where NbS portfolios should be prioritised first, which portfolios are favoured, how recommendations behave when assumptions shift, and what minimum verification still needs to happen before action. The result is an interpretable claim, not just a colourful map.
+        The SSDS is designed as a decision model rather than a full process-response simulator. Its job is to show where NbS portfolios should be prioritised first, which portfolios are favoured, how recommendations behave when assumptions shift, and what minimum verification still needs to happen before action. The result is an interpretable claim, not just a colourful map.
       </p>
       <div class="grid-3">
         <article class="card">
@@ -640,7 +640,7 @@
       </p>
       <div class="uml-layout">
         <div class="diagram-shell">
-          <svg id="uml-svg" viewBox="0 0 980 720" aria-label="UML-style SDSS dependency diagram"></svg>
+          <svg id="uml-svg" viewBox="0 0 980 720" aria-label="UML-style SSDS dependency diagram"></svg>
           <div class="legend-row">
             <span class="legend-chip" data-tip-title="Inputs" data-tip="Static or semi-static sources used to define what the system is allowed to say.">Inputs</span>
             <span class="legend-chip" data-tip-title="Decision core" data-tip="The explicit rule layer and ranking engine that transform evidence into recommendations.">Decision core</span>
@@ -664,7 +664,7 @@
     <section class="section panel" id="engine">
       <h2>Ranking engine and algorithm spine</h2>
       <p class="section-lead">
-        The SDSS is not a flat weighted-average machine. It combines exclusions, eligibility logic, lexicographic ranking, portfolio assignment, stability diagnostics, and sequencing rules. Maintainability affects implementation readiness rather than secretly altering the core environmental claim.
+        The SSDS is not a flat weighted-average machine. It combines exclusions, eligibility logic, lexicographic ranking, portfolio assignment, stability diagnostics, and sequencing rules. Maintainability affects implementation readiness rather than secretly altering the core environmental claim.
       </p>
       <div class="tabs" id="engine-tabs">
         <button class="tab-btn active" data-tab="eligibility">Eligibility</button>
@@ -885,7 +885,7 @@ else:
         </article>
         <article class="card">
           <h3>Minimum-viable verification</h3>
-          <p>The SDSS specifies indicators, directional progress, triggers for review, and what minimum information is required before action is treated as credible.</p>
+          <p>The SSDS specifies indicators, directional progress, triggers for review, and what minimum information is required before action is treated as credible.</p>
         </article>
       </div>
     </section>
@@ -918,13 +918,13 @@ else:
     <section class="section panel" id="outputs">
       <h2>Outputs, risks, and what the user sees</h2>
       <p class="section-lead">
-        Every major stage produces an inspectable artefact. That is part of the feasibility story. The site highlights the deliverables that make the SDSS legible to technical and non-technical audiences alike.
+        Every major stage produces an inspectable artefact. That is part of the feasibility story. The site highlights the deliverables that make the SSDS legible to technical and non-technical audiences alike.
       </p>
       <div class="grid-3">
         <article class="card">
           <h3>Scientific outputs</h3>
           <ul>
-            <li>Methods paper on stability-aware SDSS design.</li>
+            <li>Methods paper on stability-aware SSDS design.</li>
             <li>Demonstrator paper for Nanny-Delvin.</li>
             <li>Thesis contribution on portfolios and scaling.</li>
             <li>Data paper or methods appendix on reach-audit validation.</li>
@@ -1173,7 +1173,9 @@ else:
       persistValEl.textContent = `${persistPct}%`;
       persistValEl.style.color = statusColor;
 
-      document.getElementById('phaseValue').textContent = phaseText;
+      const phaseValEl = document.getElementById('phaseValue');
+      phaseValEl.textContent = phaseText;
+      phaseValEl.style.color = statusColor; // This line is the fix
       
       const stabValEl = document.getElementById('stabilityValue');
       stabValEl.textContent = stabilityClass;
