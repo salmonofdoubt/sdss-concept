@@ -1,4 +1,5 @@
-# Stability-Aware SDSS Concept Demo v1.0.2
+# Stability-Aware SDSS Concept Demo v1.0.4
+https://doi.org/10.5281/zenodo.19487210
 
 ## Overview
 
@@ -67,9 +68,9 @@ If you want better discoverability on GitHub, these repository topics would fit:
 
 `nature-based-solutions` `sdss` `gis` `decision-support` `uncertainty-analysis` `water-quality` `catchment-management` `spatial-planning` `environmental-modelling`
 
-## Recommended next steps
+## Process
 
-1. Create a GitHub release such as `v1.0.2`.
+1. Create a GitHub release such as `v1.0.4`.
 2. Archive that release through Zenodo.
 3. Add the version DOI back into `CITATION.cff`.
 4. Keep future technical implementation details in a separate private repository until you decide what to disclose.
@@ -77,7 +78,11 @@ If you want better discoverability on GitHub, these repository topics would fit:
 ## Rights and permissions
 
 Copyright remains with the author unless explicitly stated otherwise.
+https://doi.org/10.5281/zenodo.19487210
 
 Public visibility on GitHub or GitHub Pages does **not** mean the work is open source or free for reuse.
 
 For permissions, licensing enquiries, collaboration, or academic discussion, please contact the author directly.
+
+
+
