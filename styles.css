@@ -822,7 +822,12 @@ table.gantt {
   font-size: 0.72rem;
 }
 
-.doi-strip img {
+.doi-strip img,
+.footer-doi img {
   display: block;
   height: 20px;
+}
+
+.footer-doi {
+  margin-top: 14px;
 }
